@@ -1,0 +1,20 @@
+{
+  "name": "tasknotes",
+  "version": "1.0.0",
+  "description": "Claude Code skill for TaskNotes - task management in Obsidian with YAML frontmatter",
+  "author": {
+    "name": "Andrew McCaskill",
+    "url": "https://github.com/andrew-mccaskill"
+  },
+  "repository": "https://github.com/andrew-mccaskill/tasknotes-claude-skill",
+  "license": "MIT",
+  "keywords": [
+    "tasknotes",
+    "obsidian",
+    "tasks",
+    "gtd",
+    "productivity",
+    "yaml",
+    "frontmatter"
+  ]
+}
