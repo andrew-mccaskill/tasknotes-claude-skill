@@ -1,0 +1,15 @@
+{
+  "name": "tasknotes-claude-skill",
+  "owner": {
+    "name": "Andrew McCaskill",
+    "url": "https://github.com/andrew-mccaskill"
+  },
+  "plugins": [
+    {
+      "name": "tasknotes",
+      "source": "./",
+      "description": "Claude Code skill for TaskNotes - task management in Obsidian with YAML frontmatter",
+      "version": "1.0.0"
+    }
+  ]
+}
