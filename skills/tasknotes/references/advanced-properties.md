@@ -10,10 +10,10 @@ TaskNotes uses RRULE format (RFC 5545) for recurring tasks:
 ---
 title: Weekly team standup
 recurrence: "FREQ=WEEKLY;BYDAY=MO"
-scheduled: 2025-01-13T09:00:00
+scheduled: 2026-01-13T09:00:00
 complete_instances:
-  - "2025-01-06"
-  - "2025-01-13"
+  - "2026-01-06"
+  - "2026-01-13"
 ---
 ```
 
@@ -30,7 +30,7 @@ complete_instances:
 ### With Start Date
 
 ```yaml
-recurrence: "DTSTART:20250115T090000Z;FREQ=DAILY"
+recurrence: "DTSTART:20260115T090000Z;FREQ=DAILY"
 ```
 
 ## Dependencies
@@ -71,11 +71,11 @@ Track time spent on tasks:
 title: Write documentation
 timeEstimate: 120
 timeEntries:
-  - startTime: "2025-01-15T09:00:00"
-    endTime: "2025-01-15T10:30:00"
+  - startTime: "2026-01-15T09:00:00"
+    endTime: "2026-01-15T10:30:00"
     description: "Initial draft"
-  - startTime: "2025-01-15T14:00:00"
-    endTime: "2025-01-15T15:00:00"
+  - startTime: "2026-01-15T14:00:00"
+    endTime: "2026-01-15T15:00:00"
     description: "Revisions"
 ---
 ```
@@ -108,7 +108,7 @@ Specific time:
 reminders:
   - id: "rem_003"
     type: absolute
-    absoluteTime: "2025-01-19T09:00:00"
+    absoluteTime: "2026-01-19T09:00:00"
     description: "Follow up with client"
 ```
 
@@ -142,7 +142,7 @@ Review quarterly report tomorrow @work +[[Q1 Planning]] #finance !high
 ```yaml
 ---
 title: Review quarterly report
-due: 2025-01-16
+due: 2026-01-16
 contexts:
   - work
 projects:

@@ -1,0 +1,105 @@
+# TaskNotes Skill Configuration
+#
+# This file customizes how Claude creates TaskNotes tasks for your vault.
+# Modify these settings to match your personal TaskNotes setup.
+#
+# ONBOARDING: When you first use this skill, Claude will ask about your
+# preferences. Your answers will guide which defaults to use below.
+
+# ============================================================================
+# PRIORITY SCHEME
+# ============================================================================
+# Choose your preferred priority format:
+#   "simple"  - high, normal, low (TaskNotes default)
+#   "gtd"     - P1, P2, P3, P4 (GTD-style: P1=urgent, P2=important, P3=normal, P4=someday)
+#   "numeric" - 1, 2, 3, 4, 5 (numeric scale)
+#   "custom"  - define your own below
+
+priority_scheme: simple
+
+# Custom priorities (only used if priority_scheme is "custom")
+custom_priorities:
+  - critical
+  - high
+  - medium
+  - low
+  - backlog
+
+# ============================================================================
+# CONTEXT FORMAT
+# ============================================================================
+# How contexts are stored in your vault:
+#   true  - with @ prefix: @work, @home, @phone
+#   false - without prefix: work, home, phone
+
+context_prefix: false
+
+# Default contexts available in your vault
+default_contexts:
+  - work
+  - home
+  - errands
+  - phone
+  - computer
+
+# ============================================================================
+# STATUS OPTIONS
+# ============================================================================
+# Task statuses available in your vault
+
+statuses:
+  - open
+  - in-progress
+  - waiting
+  - done
+
+# Which status indicates completion (for dateCompleted auto-set)
+completion_status: done
+
+# ============================================================================
+# CUSTOM PROPERTIES
+# ============================================================================
+# Additional properties you use in your vault (beyond TaskNotes defaults)
+# These help Claude know what fields are valid in your setup
+
+custom_properties:
+  # Example: type field for note categorization
+  # - name: type
+  #   type: text
+  #   default: task
+
+  # Example: energy level for GTD-style planning
+  # - name: energy
+  #   type: enum
+  #   values: [high, medium, low]
+
+# ============================================================================
+# VAULT CONVENTIONS
+# ============================================================================
+# Reference file for your vault's conventions (optional)
+# If you have a CLAUDE.md or similar file documenting your vault structure,
+# specify the path here so Claude can reference it
+
+vault_conventions_file: null  # e.g., "CLAUDE.md" or "vault-guide.md"
+
+# ============================================================================
+# DATE PREFERENCES
+# ============================================================================
+# Default date format for new tasks
+#   "date"     - 2026-01-20 (date only)
+#   "datetime" - 2026-01-20T14:00:00 (with time)
+#   "utc"      - 2026-01-20T14:00:00Z (with timezone)
+
+default_date_format: date
+
+# ============================================================================
+# FEATURE TOGGLES
+# ============================================================================
+# Enable/disable advanced features based on your TaskNotes setup
+
+features:
+  time_tracking: true      # timeEstimate and timeEntries
+  dependencies: true       # blockedBy relationships
+  recurrence: true         # RRULE recurring tasks
+  reminders: true          # reminder notifications
+  natural_language: true   # NLP parsing (@context, +project, etc.)

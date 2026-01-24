@@ -9,6 +9,23 @@ TaskNotes manages tasks as individual Markdown notes in Obsidian. Each task stor
 
 Reference: [TaskNotes Documentation](https://github.com/callumalpass/tasknotes)
 
+## Onboarding (First Use)
+
+When the user first asks to create a task, check if their preferences are known. If not, ask:
+
+1. **Priority scheme:** "What priority format do you prefer?"
+   - Simple: `high`, `normal`, `low` (default)
+   - GTD: `P1`, `P2`, `P3`, `P4`
+   - Numeric: `1`, `2`, `3`, `4`, `5`
+
+2. **Context format:** "Do your contexts use the @ prefix?"
+   - With prefix: `@work`, `@home`
+   - Without prefix: `work`, `home` (default)
+
+3. **Custom properties:** "Do you use any custom fields like `type`, `energy`, or others?"
+
+See `config.yaml` for all configurable options. Use defaults if the user wants to skip setup.
+
 ## Core Properties
 
 Create tasks with this basic structure:
@@ -18,8 +35,8 @@ Create tasks with this basic structure:
 title: Task description here
 status: open
 priority: normal
-due: 2025-01-20
-scheduled: 2025-01-15
+due: 2026-01-20
+scheduled: 2026-01-15
 contexts:
   - work
 projects:
@@ -38,25 +55,52 @@ Task notes and details go here.
 |----------|------|-------------|---------|
 | `title` | text | Task name (or use filename) | `"Review budget"` |
 | `status` | enum | Workflow state | `open`, `in-progress`, `done` |
-| `priority` | enum | Importance level | `low`, `normal`, `high` |
-| `due` | date | Deadline | `2025-01-20` |
-| `scheduled` | date | When to work on it | `2025-01-15` |
-| `contexts` | list | Location/tool groupings | `["@home", "@work"]` |
+| `priority` | enum | Importance level (see formats below) | `normal` or `P2` |
+| `due` | date | Deadline | `2026-01-20` |
+| `scheduled` | date | When to work on it | `2026-01-15` |
+| `contexts` | list | Location/tool groupings | `["work"]` or `["@work"]` |
 | `projects` | list | Related project notes | `["[[Project A]]"]` |
 | `tags` | list | Standard Obsidian tags | `["finance", "urgent"]` |
 | `timeEstimate` | number | Minutes to complete | `60` |
+
+### Customizable Formats
+
+**Priority** (choose your style):
+```yaml
+# Simple (default)
+priority: high      # high, normal, low
+
+# GTD-style
+priority: P1        # P1=urgent, P2=important, P3=normal, P4=someday
+
+# Numeric
+priority: 1         # 1-5 scale (1=highest)
+```
+
+**Contexts** (choose your style):
+```yaml
+# Without prefix (default)
+contexts:
+  - work
+  - phone
+
+# With @ prefix
+contexts:
+  - "@work"
+  - "@phone"
+```
 
 ### Date Formats
 
 ```yaml
 # Date only (YYYY-MM-DD)
-due: 2025-01-20
+due: 2026-01-20
 
 # Date with time (ISO 8601)
-due: 2025-01-20T14:30:00
+due: 2026-01-20T14:30:00
 
 # With timezone
-due: 2025-01-20T14:30:00Z
+due: 2026-01-20T14:30:00Z
 ```
 
 ### Metadata Properties
@@ -64,9 +108,9 @@ due: 2025-01-20T14:30:00Z
 Auto-managed by TaskNotes:
 
 ```yaml
-dateCreated: 2025-01-10T08:00:00
-dateModified: 2025-01-15T14:30:00
-completedDate: 2025-01-20T16:45:00
+dateCreated: 2026-01-10T08:00:00
+dateModified: 2026-01-15T14:30:00
+completedDate: 2026-01-20T16:45:00
 ```
 
 ## Quick Example
@@ -78,8 +122,8 @@ A project task with estimate:
 title: Design new landing page
 status: in-progress
 priority: high
-due: 2025-01-25
-scheduled: 2025-01-20
+due: 2026-01-25
+scheduled: 2026-01-20
 projects:
   - "[[Website Redesign]]"
 tags:
@@ -106,6 +150,7 @@ For complex task management, see the reference files:
 - **Reminders**: See `references/advanced-properties.md`
 - **Natural Language Parsing**: See `references/advanced-properties.md`
 - **Complete Examples**: See `references/examples.md`
+- **Configuration**: See `config.yaml` for customization options
 
 ## Integration with Bases
 

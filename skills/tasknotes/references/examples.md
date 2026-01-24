@@ -1,6 +1,6 @@
 # TaskNotes Complete Examples
 
-Working examples for common task patterns.
+Working examples for common task patterns. These examples use default formats; see `config.yaml` for customization options.
 
 ## Simple Task
 
@@ -8,7 +8,7 @@ Working examples for common task patterns.
 ---
 title: Buy groceries
 status: open
-due: 2025-01-16
+due: 2026-01-16
 contexts:
   - errands
 tags:
@@ -23,8 +23,8 @@ tags:
 title: Design new landing page
 status: in-progress
 priority: high
-due: 2025-01-25
-scheduled: 2025-01-20
+due: 2026-01-25
+scheduled: 2026-01-20
 projects:
   - "[[Website Redesign]]"
 tags:
@@ -51,14 +51,14 @@ title: Weekly expense report
 status: open
 priority: normal
 recurrence: "FREQ=WEEKLY;BYDAY=FR"
-scheduled: 2025-01-17T16:00:00
+scheduled: 2026-01-17T16:00:00
 contexts:
   - work
 projects:
   - "[[Finance]]"
 complete_instances:
-  - "2025-01-03"
-  - "2025-01-10"
+  - "2026-01-03"
+  - "2026-01-10"
 ---
 
 Submit weekly expense report to accounting by EOD Friday.
@@ -71,7 +71,7 @@ Submit weekly expense report to accounting by EOD Friday.
 title: Deploy feature to staging
 status: open
 priority: high
-due: 2025-01-22
+due: 2026-01-22
 blockedBy:
   - uid: "[[Complete unit tests]]"
     reltype: FINISHTOSTART
@@ -94,16 +94,16 @@ projects:
 title: Write API documentation
 status: in-progress
 priority: normal
-due: 2025-01-28
+due: 2026-01-28
 projects:
   - "[[API Redesign]]"
 timeEstimate: 180
 timeEntries:
-  - startTime: "2025-01-20T09:00:00"
-    endTime: "2025-01-20T10:30:00"
+  - startTime: "2026-01-20T09:00:00"
+    endTime: "2026-01-20T10:30:00"
     description: "Outlined structure"
-  - startTime: "2025-01-21T14:00:00"
-    endTime: "2025-01-21T16:00:00"
+  - startTime: "2026-01-21T14:00:00"
+    endTime: "2026-01-21T16:00:00"
     description: "Drafted endpoints section"
 ---
 
@@ -121,8 +121,8 @@ timeEntries:
 title: Quarterly review meeting
 status: open
 priority: high
-due: 2025-02-01T10:00:00
-scheduled: 2025-01-25
+due: 2026-02-01T10:00:00
+scheduled: 2026-01-25
 contexts:
   - work
 projects:
@@ -153,8 +153,8 @@ reminders:
 title: Launch new product feature
 status: open
 priority: high
-due: 2025-02-15
-scheduled: 2025-02-01
+due: 2026-02-15
+scheduled: 2026-02-01
 contexts:
   - work
   - focus
@@ -182,7 +182,7 @@ reminders:
     relatedTo: due
     offset: "-PT2H"
     description: "Deployment check"
-dateCreated: 2025-01-10T08:00:00
+dateCreated: 2026-01-10T08:00:00
 ---
 
 ## Launch Checklist
@@ -203,9 +203,15 @@ dateCreated: 2025-01-10T08:00:00
 - [ ] Schedule retrospective
 ```
 
-## GTD-Style Task (Parallel Systems Context)
+---
 
-Based on the vault conventions from CLAUDE.md:
+## Customization Examples
+
+The following examples show alternative formats based on user preferences. Configure your preferred style in `config.yaml`.
+
+### GTD-Style Task (Alternative Priority Format)
+
+Uses `P1-P4` priority scheme and `type` property for note categorization:
 
 ```yaml
 ---
@@ -213,11 +219,11 @@ type: task
 title: Review quarterly IT budget
 status: open
 priority: P2
-due: 2025-01-31
+due: 2026-01-31
 contexts:
   - parallel
 projects:
-  - "[[IT Budget 2025]]"
+  - "[[IT Budget 2026]]"
 tags:
   - finance
   - quarterly
@@ -232,4 +238,38 @@ Review and approve IT expenditure projections for Q1.
 - [ ] Hardware refresh plan
 ```
 
-Note: The `contexts: parallel` indicates this is work-related per the vault's context conventions.
+**Note:** The `priority: P2` format and `type: task` property are custom configurations. The `contexts: parallel` indicates work-related tasks in this vault's context conventions.
+
+### Task with @ Context Prefix
+
+Some users prefer contexts with `@` prefix:
+
+```yaml
+---
+title: Call client about proposal
+status: open
+priority: high
+due: 2026-01-22
+contexts:
+  - "@phone"
+  - "@work"
+tags:
+  - client
+  - sales
+---
+```
+
+### Numeric Priority Task
+
+Using 1-5 numeric scale:
+
+```yaml
+---
+title: Fix critical bug in production
+status: in-progress
+priority: 1
+due: 2026-01-20
+projects:
+  - "[[Bug Fixes]]"
+---
+```
